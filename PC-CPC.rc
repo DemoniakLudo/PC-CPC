@@ -1,0 +1,790 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PCCPC               ICON    DISCARDABLE     "PC-CPC.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_PCCPC MENU DISCARDABLE 
+BEGIN
+    POPUP "Fichier"
+    BEGIN
+        MENUITEM "Disque A - Lecture\t<F7>",    ID_DSK_READ_A
+        MENUITEM "Disque A - Ejecter",          ID_DSK_EJECT_A
+        MENUITEM "Disque A - Disquette vide",   ID_DSK_EMPTY_A
+        MENUITEM SEPARATOR
+        MENUITEM "Disque B - Lecture\t<SHIFT F7>", ID_DSK_READ_B
+        MENUITEM "Disque B - Ejecter",          ID_DSK_EJECT_B
+        MENUITEM "Disque B - Disquette vide",   ID_DSK_EMPTY_B
+        MENUITEM SEPARATOR
+        MENUITEM "Cassette - Lecture\t<F9>",    ID_TAPE_LOAD
+        MENUITEM "Cassette - Ejecter",          ID_TAPE_EJECT
+        MENUITEM "Cassette - Ecriture\t<F11>",  ID_TAPE_SAVE
+        MENUITEM "Cassette - Browser",          ID_TAPE_BROWSE
+        MENUITEM SEPARATOR
+        MENUITEM "Snapshot - Lecture\t<F4>",    ID_SNA_READ
+        MENUITEM "Snapshot - Recharger",        ID_SNA_REREAD
+        MENUITEM "Snapshot - Ecriture\t<F5>",   ID_SNA_SAVE
+        MENUITEM "Shanshot - Resauver",         ID_SNA_RESAVE
+        MENUITEM SEPARATOR
+        MENUITEM "Lecture/écriture PC\t<SHIFT F2>", ID_NEW_DISC
+        MENUITEM "Assembler fichier\t<SHIFT F12>", ID_ASSEMBLE
+        MENUITEM SEPARATOR
+        MENUITEM "&Quitter",                    IDM_EXIT
+    END
+    POPUP "Options"
+    BEGIN
+        MENUITEM "Pause CPC",                   ID_PAUSE_CPC
+        MENUITEM SEPARATOR
+        MENUITEM "Reset CPC\t<F8>",             ID_RESET
+        MENUITEM SEPARATOR
+        MENUITEM "Configuration clavier",       ID_CONF_KBD
+        MENUITEM SEPARATOR
+        MENUITEM "Emuler Pistolet Phaser",      ID_EMULE_PHASER
+        MENUITEM "Emuler Pistolet Trojan",      ID_EMULE_TROJAN
+        MENUITEM "Emuler Magnum Lightgun",      ID_EMULE_LIGHTGUN
+        MENUITEM SEPARATOR
+        MENUITEM "BDD Phenixinformatique.com\t<SHIFT F1>", 
+                                                ID_PHENIXINFORMATIQUE
+        MENUITEM SEPARATOR
+        MENUITEM "Configuration",               ID_CONFIG
+    END
+    POPUP "Outils"
+    BEGIN
+        MENUITEM "Multiface\t<F3>",             ID_MULTIFACE
+        MENUITEM "RomPack\t<SHIFT F8>",         ID_ROMPACK
+        MENUITEM SEPARATOR
+        MENUITEM "Action Replay",               ID_ACTIONREPLAY
+        MENUITEM "Pokes",                       ID_POKES
+        MENUITEM SEPARATOR
+        MENUITEM "Autotype",                    ID_AUTOTYPE
+        MENUITEM SEPARATOR
+        MENUITEM "Debugger\t<F6>",              ID_DEBUGGER
+    END
+    POPUP "Video"
+    BEGIN
+        MENUITEM "Petite Fenêtre\t<SHIFT F3>",  ID_WINSIZE
+        MENUITEM SEPARATOR
+        MENUITEM "Turbo\t<F2>",                 ID_TURBO
+        MENUITEM SEPARATOR
+        MENUITEM "Monochrome\t<SHIFT F4>",      ID_COLOR_MONO
+        MENUITEM "Doubler les lignes",          ID_DOUBLE_LINES
+        MENUITEM "Emulation PAL",               ID_PAL_EMUL
+        MENUITEM SEPARATOR
+        MENUITEM "Sauvegarde BMP\t<F12>",       ID_BMP_SAVE
+        MENUITEM "Sauvegarde AVI\t<SHIFT F11>", ID_AVI_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "Configuration",               ID_CONF_VIDEO
+    END
+    POPUP "Son"
+    BEGIN
+        MENUITEM "Son actif",                   ID_SND_ACTIF
+        MENUITEM "Amstrad SSA-1 Speech Synthetiser actif", ID_SSA1_ACTIF
+        MENUITEM "DK'Tronic Speech Synthetiser actif", ID_DKTRONIC_ACTIF
+        MENUITEM SEPARATOR
+        MENUITEM "Emuler le son du lecteur de disquettes", ID_SND_DSK
+        MENUITEM "Emuler le son du lecteur de cassettes", ID_SND_TAPE
+        MENUITEM SEPARATOR
+        MENUITEM "Sauvegarde WAV",              ID_WAV_SAVE
+        MENUITEM "Sauvegarde YM\t<SHIFT F5>",   ID_YM_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "Configuration",               ID_CONF_SND
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_POS_TAPE DIALOG DISCARDABLE  0, 0, 186, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pos Tape"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+END
+
+IDD_DEBUG_DIALOG DIALOGEX 0, 0, 557, 338
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Debugger"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Z80",IDC_STATIC,232,0,112,126
+    LTEXT           "AF",IDC_STATIC,242,20,10,10
+    LTEXT           "BC",IDC_STATIC,242,30,10,10
+    LTEXT           "DE",IDC_STATIC,242,40,10,10
+    LTEXT           "HL",IDC_STATIC,242,50,10,10
+    LTEXT           "IX",IDC_STATIC,242,60,10,10
+    LTEXT           "IY",IDC_STATIC,242,70,10,10
+    LTEXT           "IFF1",IDC_STATIC,240,90,15,10
+    LTEXT           "IFF2",IDC_STATIC,240,100,15,10
+    LTEXT           "AF'",IDC_STATIC,295,20,10,10
+    LTEXT           "BC'",IDC_STATIC,295,30,15,10
+    LTEXT           "DE'",IDC_STATIC,295,40,15,10
+    LTEXT           "HL'",IDC_STATIC,295,50,15,10
+    LTEXT           "IR",IDC_STATIC,295,60,10,10
+    LTEXT           "SP",IDC_STATIC,295,70,10,10
+    LTEXT           "PC",IDC_STATIC,295,80,10,10
+    LTEXT           "I.M.",IDC_STATIC,295,100,15,10
+    EDITTEXT        IDC_Z80_AF,256,18,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_BC,256,28,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_DE,256,38,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_HL,256,48,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_IX,256,58,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_IY,256,68,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_IFF1,256,88,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_IFF2,256,98,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_AF_,311,18,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_BC_,311,28,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_DE_,311,38,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_HL_,311,48,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_IR,311,58,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_SP,311,68,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_PC,311,78,30,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_Z80_IM,311,98,30,12,ES_RIGHT | ES_READONLY
+    CONTROL         "",IDC_COL00,"Static",SS_BLACKFRAME | SS_NOTIFY,462,60,
+                    10,10
+    CONTROL         "",IDC_COL01,"Static",SS_BLACKFRAME | SS_NOTIFY,462,71,
+                    10,10
+    CONTROL         "",IDC_COL02,"Static",SS_BLACKFRAME | SS_NOTIFY,462,82,
+                    10,10
+    CONTROL         "",IDC_COL03,"Static",SS_BLACKFRAME | SS_NOTIFY,462,94,
+                    10,10
+    CONTROL         "",IDC_COL04,"Static",SS_BLACKFRAME | SS_NOTIFY,462,104,
+                    10,10
+    CONTROL         "",IDC_COL05,"Static",SS_BLACKFRAME | SS_NOTIFY,462,115,
+                    10,10
+    CONTROL         "",IDC_COL06,"Static",SS_BLACKFRAME | SS_NOTIFY,462,126,
+                    10,10
+    CONTROL         "",IDC_COL07,"Static",SS_BLACKFRAME | SS_NOTIFY,462,137,
+                    10,10
+    CONTROL         "",IDC_COL08,"Static",SS_BLACKFRAME | SS_NOTIFY,462,148,
+                    10,10
+    CONTROL         "",IDC_COL09,"Static",SS_BLACKFRAME | SS_NOTIFY,462,159,
+                    10,10
+    CONTROL         "",IDC_COL10,"Static",SS_BLACKFRAME | SS_NOTIFY,462,170,
+                    10,10
+    CONTROL         "",IDC_COL11,"Static",SS_BLACKFRAME | SS_NOTIFY,462,182,
+                    10,10
+    CONTROL         "",IDC_COL12,"Static",SS_BLACKFRAME | SS_NOTIFY,462,192,
+                    10,10
+    CONTROL         "",IDC_COL13,"Static",SS_BLACKFRAME | SS_NOTIFY,462,203,
+                    10,10
+    CONTROL         "",IDC_COL14,"Static",SS_BLACKFRAME | SS_NOTIFY,462,214,
+                    10,10
+    CONTROL         "",IDC_COL15,"Static",SS_BLACKFRAME | SS_NOTIFY,462,225,
+                    10,10
+    CONTROL         "",IDC_COL16,"Static",SS_BLACKFRAME | SS_NOTIFY,462,236,
+                    10,10
+    LTEXT           "Pen Select",IDC_STATIC,430,33,36,8
+    LTEXT           "Ram Select",IDC_STATIC,430,22,38,8
+    LTEXT           "Rom/mode",IDC_STATIC,430,10,36,8
+    LTEXT           "Color 00",IDC_STATIC,432,62,27,8
+    LTEXT           "Color 07",IDC_STATIC,432,139,27,8
+    LTEXT           "Color 15",IDC_STATIC,432,227,27,8
+    LTEXT           "Border",IDC_STATIC,432,238,22,8
+    EDITTEXT        IDC_VGA_ROM,470,10,20,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_VGA_RAM,470,20,20,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_VGA_PEN,470,32,20,12,ES_RIGHT | ES_READONLY
+    GROUPBOX        "Gate Array",IDC_STATIC,426,0,66,284
+    GROUPBOX        "CRTC",IDC_STATIC,496,0,61,284
+    EDITTEXT        IDC_CRTC_INDEX,535,10,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG00,535,20,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG01,535,30,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG02,535,40,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG03,535,50,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG04,535,60,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG05,535,70,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG06,535,80,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG07,535,90,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG08,535,100,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG09,535,110,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG10,535,120,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG11,535,130,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG12,535,140,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG13,535,150,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG14,535,160,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG15,535,170,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG16,535,180,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG17,535,190,18,12,ES_RIGHT | ES_READONLY
+    LTEXT           "Index",IDC_STATIC,505,12,18,8
+    LTEXT           "Reg 00",IDC_STATIC,505,22,24,8
+    LTEXT           "Reg 01",IDC_STATIC,505,32,24,8
+    LTEXT           "Reg 02",IDC_STATIC,505,42,24,8
+    LTEXT           "Reg 03",IDC_STATIC,505,52,24,8
+    LTEXT           "Reg 04",IDC_STATIC,505,62,24,8
+    LTEXT           "Reg 05",IDC_STATIC,505,72,24,8
+    LTEXT           "Reg 06",IDC_STATIC,505,82,24,8
+    LTEXT           "Reg 07",IDC_STATIC,505,92,24,8
+    LTEXT           "Reg 08",IDC_STATIC,505,100,24,8
+    LTEXT           "Reg 09",IDC_STATIC,505,112,24,8
+    LTEXT           "Reg 10",IDC_STATIC,505,122,24,8
+    LTEXT           "Reg 11",IDC_STATIC,505,132,24,8
+    LTEXT           "Reg 12",IDC_STATIC,505,142,24,8
+    LTEXT           "Reg 13",IDC_STATIC,505,152,24,8
+    LTEXT           "Reg 14",IDC_STATIC,505,162,24,8
+    LTEXT           "Reg 15",IDC_STATIC,505,172,24,8
+    LTEXT           "Reg 16",IDC_STATIC,505,182,24,8
+    LTEXT           "Reg 17",IDC_STATIC,505,192,24,8
+    EDITTEXT        IDC_Z80_FLAGS,296,5,45,12,ES_RIGHT | ES_READONLY
+    LTEXT           "Flags",IDC_STATIC,276,7,19,10
+    LTEXT           "T",IDC_STATIC,239,114,8,10
+    EDITTEXT        IDC_Z80_T,247,112,50,12,ES_RIGHT | ES_READONLY
+    PUSHBUTTON      "X",IDC_BPCLEART,298,112,15,12
+    PUSHBUTTON      ">",IDC_SHOW_COMP,412,0,10,9
+    SCROLLBAR       IDC_SCROLL,220,0,11,337,SBS_VERT
+    SCROLLBAR       IDC_SCROLL_STACK,412,10,10,116,SBS_VERT
+    SCROLLBAR       IDC_SCROLL_DUMP,412,140,10,141,SBS_VERT
+    LISTBOX         IDC_STACK,354,10,57,116,LBS_NOINTEGRALHEIGHT | LBS_NOSEL
+    LISTBOX         IDC_DUMP,232,140,180,141,LBS_NOINTEGRALHEIGHT | 
+                    LBS_NOSEL
+    LISTBOX         IDC_DESASM,0,0,220,337,LBS_OWNERDRAWVARIABLE | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | LBS_NOSEL
+    LTEXT           "Pile",IDC_STATIC,345,0,47,10,0,WS_EX_TRANSPARENT
+    CONTROL         "Afficher ASCII",IDC_ASCII,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,233,130,60,10
+    EDITTEXT        IDC_NUMROM,470,43,20,12,ES_RIGHT | ES_READONLY
+    LTEXT           "Num Rom",IDC_STATIC,431,44,32,8
+    EDITTEXT        IDC_CNTHSYNC,468,260,20,12,ES_RIGHT | ES_READONLY
+    LTEXT           "CntHSync",IDC_STATIC,432,263,33,8
+    EDITTEXT        IDC_CRTC_REG18,536,220,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG19,536,232,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG20,536,244,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG21,536,256,18,12,ES_RIGHT | ES_READONLY
+    EDITTEXT        IDC_CRTC_REG22,536,268,18,12,ES_RIGHT | ES_READONLY
+    LTEXT           "HCC",IDC_STATIC,500,224,16,8
+    LTEXT           "VCC",IDC_STATIC,500,236,15,8
+    LTEXT           "VtAdj",IDC_STATIC,500,248,18,8
+    LTEXT           "VLC",IDC_STATIC,500,260,14,8
+    LTEXT           "SyncCount",IDC_STATIC,500,272,36,8
+END
+
+IDD_CHOIXCOULEUR DIALOGEX 0, 0, 196, 189
+STYLE DS_SYSMODAL | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choix de la couleur"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_COL00,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,4,4,20,12
+    LTEXT           "00",IDC_STATIC,8,20,12,8
+    CONTROL         "",IDC_COL01,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,28,4,20,12
+    LTEXT           "01",IDC_STATIC,32,20,12,8
+    CONTROL         "",IDC_COL02,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,52,4,20,12
+    LTEXT           "02",IDC_STATIC,56,20,12,8
+    CONTROL         "",IDC_COL03,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,76,4,20,12
+    LTEXT           "03",IDC_STATIC,80,20,12,8
+    CONTROL         "",IDC_COL04,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,100,4,20,12
+    LTEXT           "04",IDC_STATIC,104,20,12,8
+    CONTROL         "",IDC_COL05,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,124,4,20,12
+    LTEXT           "05",IDC_STATIC,128,20,12,8
+    CONTROL         "",IDC_COL06,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,148,5,20,12
+    LTEXT           "06",IDC_STATIC,152,21,12,8
+    CONTROL         "",IDC_COL07,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,172,4,20,12
+    LTEXT           "07",IDC_STATIC,176,20,12,8
+    CONTROL         "",IDC_COL08,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,4,32,20,12
+    LTEXT           "08",IDC_STATIC,8,48,12,8
+    CONTROL         "",IDC_COL09,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,28,32,20,12
+    LTEXT           "09",IDC_STATIC,32,48,12,8
+    CONTROL         "",IDC_COL10,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,52,32,20,12
+    LTEXT           "10",IDC_STATIC,56,48,12,8
+    CONTROL         "",IDC_COL11,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,76,32,20,12
+    LTEXT           "11",IDC_STATIC,80,48,12,8
+    CONTROL         "",IDC_COL12,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,100,32,20,12
+    LTEXT           "12",IDC_STATIC,104,48,12,8
+    CONTROL         "",IDC_COL13,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,124,32,20,12
+    LTEXT           "13",IDC_STATIC,128,48,12,8
+    CONTROL         "",IDC_COL14,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,148,32,20,12
+    LTEXT           "14",IDC_STATIC,152,48,12,8
+    CONTROL         "",IDC_COL15,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,172,32,20,12
+    LTEXT           "15",IDC_STATIC,176,48,12,8
+    CONTROL         "",IDC_COL16,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,4,60,20,12
+    LTEXT           "16",IDC_STATIC,8,76,12,8
+    CONTROL         "",IDC_COL17,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,28,60,20,12
+    LTEXT           "17",IDC_STATIC,32,76,12,8
+    CONTROL         "",IDC_COL18,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,52,60,20,12
+    LTEXT           "18",IDC_STATIC,56,76,12,8
+    CONTROL         "",IDC_COL19,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,76,60,20,12
+    LTEXT           "19",IDC_STATIC,80,76,12,8
+    CONTROL         "",IDC_COL20,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,100,60,20,12
+    LTEXT           "20",IDC_STATIC,104,76,12,8
+    CONTROL         "",IDC_COL21,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,124,60,20,12
+    LTEXT           "21",IDC_STATIC,128,76,12,8
+    CONTROL         "",IDC_COL22,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,148,60,20,12
+    LTEXT           "22",IDC_STATIC,152,76,12,8
+    CONTROL         "",IDC_COL23,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,172,60,20,12
+    LTEXT           "23",IDC_STATIC,176,76,12,8
+    CONTROL         "",IDC_COL24,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,4,88,20,12
+    LTEXT           "24",IDC_STATIC,8,104,12,8
+    CONTROL         "",IDC_COL25,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,28,88,20,12
+    LTEXT           "25",IDC_STATIC,32,104,12,8
+    CONTROL         "",IDC_COL26,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,52,88,20,12
+    LTEXT           "26",IDC_STATIC,56,104,12,8
+    CONTROL         "",IDC_COL27,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,76,88,20,12
+    LTEXT           "27",IDC_STATIC,80,104,12,8
+    CONTROL         "",IDC_COL28,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,100,88,20,12
+    LTEXT           "28",IDC_STATIC,104,104,12,8
+    CONTROL         "",IDC_COL29,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,124,88,20,12
+    LTEXT           "29",IDC_STATIC,128,104,12,8
+    CONTROL         "",IDC_COL30,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,148,88,20,12
+    LTEXT           "30",IDC_STATIC,152,104,12,8
+    CONTROL         "",IDC_COL31,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,172,88,20,12
+    LTEXT           "31",IDC_STATIC,176,104,12,8
+    CONTROL         "",IDC_COLCHOIX,"Static",SS_BLACKFRAME | SS_NOTIFY | 
+                    SS_SUNKEN,28,132,48,32
+    GROUPBOX        "Couleur",IDC_STATIC,4,120,76,48
+    LTEXT           "01 :",IDC_NUMCOL,12,136,16,12
+    CONTROL         "",IDC_SLIDER_R,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,88,124,80,12
+    CONTROL         "",IDC_SLIDER_V,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,88,140,80,12
+    CONTROL         "",IDC_SLIDER_B,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,88,156,80,12
+    EDITTEXT        IDC_EDIT_R,168,124,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_V,168,140,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_B,168,156,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "Valider",ID_VALIDE,44,172,50,14
+    PUSHBUTTON      "Annuler",IDCANCEL,100,172,50,14
+END
+
+IDD_DIAL_BREAK DIALOGEX 0, 0, 316, 191
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Point d'arrêt"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_BREAK,0,24,315,162,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Activé",IDC_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,0,14,36,11
+    EDITTEXT        IDC_ADR,0,0,31,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_CONDITION,43,0,272,13,ES_AUTOHSCROLL
+    CONTROL         "Conditionné",IDC_COND_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,43,14,50,9
+END
+
+IDD_ASM_OUT DIALOGEX 0, 0, 546, 180
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Sortie assembleur"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_SORTIE,0,0,546,180,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DIAL_PHENIXINFO DIALOGEX 0, 0, 458, 324
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+FONT 8, "Courier New", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LISTE,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,0,0,456,143
+    CONTROL         "",IDC_IMAGE,"Static",SS_BITMAP,26,164,13,12
+    PUSHBUTTON      "Télécharger DSK",IDC_BP_GETDSK,296,304,128,12
+    PUSHBUTTON      "Télécharger SNA",IDC_BP_GETSNA,296,256,128,12
+    PUSHBUTTON      "<",IDC_BPSCRPREV,4,233,20,14
+    PUSHBUTTON      ">",IDC_BPSCRNEXT,248,237,20,14
+    PUSHBUTTON      ">",IDC_BPDSKNEXT,424,304,20,12
+    PUSHBUTTON      ">",IDC_BPSNANEXT,424,256,20,12
+    PUSHBUTTON      "<",IDC_BPDSKPREV,276,304,20,12
+    PUSHBUTTON      "<",IDC_BPSNAPREV,276,256,20,12
+    EDITTEXT        IDC_SNA_NAME,276,240,168,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_DSK_NAME,276,288,168,12,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "SNA",IDC_STATIC,272,228,176,44
+    GROUPBOX        "DSK",IDC_STATIC,272,276,176,44
+    PUSHBUTTON      "Recharger la liste",IDC_RELOAD,276,200,80,16
+    GROUPBOX        "Liste des logiciels",IDC_STATIC,272,188,176,32
+    LTEXT           "",IDC_NBRE,364,204,76,12
+    GROUPBOX        "",IDC_STATIC,0,144,456,180
+    EDITTEXT        IDC_NOM_JEU,4,152,264,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "Charger logiciel",IDC_BP_RUNSNA,272,152,176,12
+END
+
+IDD_EDIT_CONFIG DIALOG DISCARDABLE  0, 0, 388, 245
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configuration"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "Exporter",IDC_EXPORT_CONFIG,336,219,50,14
+    PUSHBUTTON      "Importer",IDC_IMPORT_CONFIG,336,204,50,14
+    PUSHBUTTON      "Valider",IDC_VALIDER,144,228,50,14
+    PUSHBUTTON      "Annuler",IDC_ANNULER,196,228,50,14
+    GROUPBOX        "Niveau de loggin",IDC_STATIC,0,209,97,28
+    COMBOBOX        IDC_LOGLEVEL,5,220,88,64,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "",IDC_ONGLET_CONF,"SysTabControl32",0x0,4,4,380,197
+END
+
+IDD_CONF_SCR DIALOG DISCARDABLE  0, 0, 308, 152
+STYLE DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Doubler les lignes",IDC_DOUBLELINES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,100,60,76,8
+    CONTROL         "Fenêtre sans bordure",IDC_BORDERLESS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,76,84,8
+    LTEXT           "Résolution en X",IDC_STATIC,116,76,51,8
+    EDITTEXT        IDC_RESOX,172,73,24,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_RESOY,272,73,24,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Résolution en Y",IDC_STATIC,216,76,51,8
+    PUSHBUTTON      "Editer palette Couleur",IDC_EDITPALCOLOR,76,12,92,14
+    PUSHBUTTON      "Editer palette Monochrome",IDC_EDITPALMONO,76,28,92,14
+    CONTROL         "Emulation ""PAL""",IDC_PALEMUL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,184,60,68,8
+    GROUPBOX        "Ecran",IDC_STATIC,0,48,304,68
+    CONTROL         "Couleur",IDC_SCR_COUL,"Button",BS_AUTORADIOBUTTON,4,12,
+                    40,10
+    CONTROL         "Monochrome",IDC_SCR_MONO,"Button",BS_AUTORADIOBUTTON,4,
+                    28,57,10
+    GROUPBOX        "Moniteur",IDC_STATIC,0,0,68,48
+    GROUPBOX        "Palette",IDC_STATIC,72,0,100,48
+    GROUPBOX        "Crtc",IDC_STATIC,176,0,128,48
+    COMBOBOX        IDC_CRTC_TYPE,188,16,104,28,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_CONF_MEM DIALOGEX 0, 0, 312, 180
+STYLE DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Emuler multiface",IDC_MULTIFACE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,36,144,67,10
+    PUSHBUTTON      "Choix Rom Multiface",IDC_BP_MULTIFACE,112,144,72,12
+    EDITTEXT        IDC_ROM_MULTIFACE,36,160,152,12,ES_AUTOHSCROLL
+    LTEXT           "total : 576 Ko",IDC_VAL_RAM,8,88,68,8
+    CONTROL         "",IDC_SLIDER_RAM,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,8,108,76,12
+    LISTBOX         IDC_LISTROM,100,12,204,112,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Machine",IDC_STATIC,0,0,92,68
+    GROUPBOX        "Ram",IDC_STATIC,0,68,92,60
+    GROUPBOX        "Roms",IDC_STATIC,96,0,212,128
+    GROUPBOX        "Multiface",IDC_STATIC,0,132,308,44
+    LTEXT           "OEM :",IDC_STATIC,36,8,21,8
+    COMBOBOX        IDC_MACHINE,4,20,84,64,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Modèle :",IDC_STATIC,28,40,28,8
+    COMBOBOX        IDC_MODELE,4,52,84,30,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_CONF_CHOIXROM DIALOG DISCARDABLE  0, 0, 232, 30
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,60,16,50,14
+    PUSHBUTTON      "Annuler",IDCANCEL,112,16,50,14
+    CONTROL         "",IDC_ACTIVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,0,0,
+                    12,10
+    COMBOBOX        IDC_CHOIX_ROM,12,0,220,96,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_CONF_KBD DIALOG DISCARDABLE  0, 0, 376, 135
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "F.",IDC_KEY_7F_00,347,92,19,19
+    PUSHBUTTON      "ENTER",IDC_KEY_BF_00,238,112,68,19
+    PUSHBUTTON      "F3",IDC_KEY_DF_00,347,72,19,19
+    PUSHBUTTON      "F6",IDC_KEY_EF_00,347,52,19,19
+    PUSHBUTTON      "F9",IDC_KEY_F7_00,347,32,19,19
+    PUSHBUTTON      "down",IDC_KEY_FB_00,327,112,19,19
+    PUSHBUTTON      "right",IDC_KEY_FD_00,347,112,19,19
+    PUSHBUTTON      "up",IDC_KEY_FE_00,327,92,19,19
+    PUSHBUTTON      "F0",IDC_KEY_7F_01,307,92,19,19
+    PUSHBUTTON      "F2",IDC_KEY_BF_01,327,72,19,19
+    PUSHBUTTON      "F1",IDC_KEY_DF_01,307,72,19,19
+    PUSHBUTTON      "F5",IDC_KEY_EF_01,327,52,19,19
+    PUSHBUTTON      "F8",IDC_KEY_F7_01,327,32,19,19
+    PUSHBUTTON      "F7",IDC_KEY_FB_01,307,32,19,19
+    PUSHBUTTON      "COPY",IDC_KEY_FD_01,42,112,34,19
+    PUSHBUTTON      "left",IDC_KEY_FE_01,307,112,19,19
+    PUSHBUTTON      "CONTROL",IDC_KEY_7F_02,7,112,34,19
+    PUSHBUTTON      "@\\\n $",IDC_KEY_BF_02,242,92,19,19,BS_MULTILINE
+    PUSHBUTTON      "SHIFT",IDC_KEY_DF_02,262,92,44,19
+    PUSHBUTTON      "SHIFT",IDC_KEY_FE_02,7,92,34,19
+    PUSHBUTTON      "F4",IDC_KEY_EF_02,307,52,19,19
+    PUSHBUTTON      ">\n#",IDC_KEY_F7_02,257,72,19,19,BS_MULTILINE
+    PUSHBUTTON      "RETURN",IDC_KEY_FB_02,277,52,29,39
+    PUSHBUTTON      "<\n*",IDC_KEY_FD_02,252,52,19,19,BS_MULTILINE
+    PUSHBUTTON      "CLR",IDC_KEY_FE_02,267,32,19,19
+    PUSHBUTTON      "/\n:",IDC_KEY_7F_03,202,92,19,19,BS_MULTILINE
+    PUSHBUTTON      "+\n=",IDC_KEY_BF_03,222,92,19,19,BS_MULTILINE
+    PUSHBUTTON      "M",IDC_KEY_DF_03,217,72,19,19,BS_MULTILINE
+    PUSHBUTTON      "%\nù",IDC_KEY_EF_03,237,72,19,19,BS_MULTILINE
+    PUSHBUTTON      "P",IDC_KEY_F7_03,212,52,19,19
+    PUSHBUTTON      "|\n^",IDC_KEY_FB_03,232,52,19,19,BS_MULTILINE
+    PUSHBUTTON      "[\n)",IDC_KEY_FD_03,227,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "_\n-",IDC_KEY_FE_03,247,32,19,19,BS_MULTILINE
+    PUSHBUTTON      ".\n;",IDC_KEY_7F_04,182,92,19,19,BS_MULTILINE
+    PUSHBUTTON      "?\n,",IDC_KEY_BF_04,162,92,19,19,BS_MULTILINE
+    PUSHBUTTON      "K",IDC_KEY_DF_04,177,72,19,19
+    PUSHBUTTON      "L",IDC_KEY_EF_04,197,72,19,19
+    PUSHBUTTON      "I",IDC_KEY_F7_04,172,52,19,19
+    PUSHBUTTON      "O",IDC_KEY_FB_04,192,52,19,19
+    PUSHBUTTON      "9\nç",IDC_KEY_FD_04,187,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "0\nà",IDC_KEY_FE_04,207,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "",IDC_KEY_7F_05,77,112,160,19
+    PUSHBUTTON      "N",IDC_KEY_BF_05,142,92,19,19
+    PUSHBUTTON      "J",IDC_KEY_DF_05,157,72,19,19
+    PUSHBUTTON      "H",IDC_KEY_EF_05,137,72,19,19
+    PUSHBUTTON      "Y",IDC_KEY_F7_05,132,52,19,19
+    PUSHBUTTON      "U",IDC_KEY_FB_05,152,52,19,19
+    PUSHBUTTON      "7\nè",IDC_KEY_FD_05,147,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "8\n!",IDC_KEY_FE_05,167,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "V",IDC_KEY_7F_06,102,92,19,19
+    PUSHBUTTON      "B",IDC_KEY_BF_06,122,92,19,19
+    PUSHBUTTON      "F",IDC_KEY_DF_06,97,72,19,19
+    PUSHBUTTON      "G",IDC_KEY_EF_06,117,72,19,19
+    PUSHBUTTON      "T",IDC_KEY_F7_06,112,52,19,19
+    PUSHBUTTON      "R",IDC_KEY_FB_06,92,52,19,19
+    PUSHBUTTON      "5\n(",IDC_KEY_FD_06,107,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "6\n]",IDC_KEY_FE_06,127,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "X",IDC_KEY_7F_07,62,92,19,19
+    PUSHBUTTON      "C",IDC_KEY_BF_07,82,92,19,19
+    PUSHBUTTON      "D",IDC_KEY_DF_07,77,72,19,19
+    PUSHBUTTON      "S",IDC_KEY_EF_07,57,72,19,19
+    PUSHBUTTON      "Z",IDC_KEY_F7_07,52,52,19,19
+    PUSHBUTTON      "E",IDC_KEY_FB_07,72,52,19,19
+    PUSHBUTTON      "3\n""",IDC_KEY_FD_07,67,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "4\n'",IDC_KEY_FE_07,87,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "W",IDC_KEY_7F_08,42,92,19,19
+    PUSHBUTTON      "CAPS",IDC_KEY_BF_08,7,72,29,19
+    PUSHBUTTON      "Q",IDC_KEY_DF_08,37,72,19,19
+    PUSHBUTTON      "TAB",IDC_KEY_EF_08,7,52,24,19
+    PUSHBUTTON      "A",IDC_KEY_F7_08,32,52,19,19
+    PUSHBUTTON      "ESC",IDC_KEY_FB_08,7,32,19,19
+    PUSHBUTTON      "2\né",IDC_KEY_FD_08,47,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "1\n&&",IDC_KEY_FE_08,27,32,19,19,BS_MULTILINE
+    PUSHBUTTON      "DEL",IDC_KEY_7F_09,287,32,19,19
+    CONTROL         "FR",IDC_KEYB_FR,"Button",BS_AUTORADIOBUTTON,3,6,25,10
+    CONTROL         "UK",IDC_KEYB_UK,"Button",BS_AUTORADIOBUTTON,3,18,25,10
+END
+
+IDD_CONF_SND DIALOGEX 0, 0, 308, 100
+STYLE DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Activer son",IDC_SND_ON,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,8,52,10
+    CONTROL         "",IDC_FREQ_WAV,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,8,36,100,12
+    LTEXT           "Fréquence de replay : 44100 Hz",IDC_TXT_FREQ,12,24,104,
+                    8
+END
+
+IDD_ACTION_REPLAY DIALOGEX 0, 0, 284, 237
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Action Replay"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LISTE_MEM,4,25,68,175,LBS_NOINTEGRALHEIGHT | 
+                    LBS_WANTKEYBOARDINPUT | WS_TABSTOP
+    LISTBOX         IDC_LIST_RESULT,96,25,80,133,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Nouvelle recherche",IDC_ACTION,4,220,80,14
+    SCROLLBAR       IDC_SCROLL,72,25,11,175,SBS_VERT
+    CONTROL         "64K supplémentaires",IDC_MEM_BANK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,208,80,10
+    CONTROL         "NEW < OLD",IDC_VAL_INF,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,104,172,54,10
+    CONTROL         "NEW > OLD",IDC_VAL_SUP,"Button",BS_AUTORADIOBUTTON,104,
+                    184,54,10
+    CONTROL         "NEW = OLD",IDC_VAL_EQU,"Button",BS_AUTORADIOBUTTON,104,
+                    196,54,10
+    CONTROL         "NEW <> OLD",IDC_VAL_DIF,"Button",BS_AUTORADIOBUTTON,104,
+                    208,59,10
+    PUSHBUTTON      "Comparer",IDC_BP_CHERCHE,104,220,52,14
+    LTEXT           "Nbre",IDC_NB_ITEMS,96,160,80,8
+    LTEXT           "RAM",IDC_STATIC,4,12,17,12,0,WS_EX_CLIENTEDGE
+    LTEXT           "ADR",IDC_STATIC,21,12,17,12,0,WS_EX_CLIENTEDGE
+    LTEXT           "OLD",IDC_STATIC,38,12,17,12,0,WS_EX_CLIENTEDGE
+    LTEXT           "NEW",IDC_STATIC,55,12,17,12,0,WS_EX_CLIENTEDGE
+    LTEXT           "RAM",IDC_STATIC,96,12,17,12,0,WS_EX_CLIENTEDGE
+    LTEXT           "ADR",IDC_STATIC,113,12,17,12,0,WS_EX_CLIENTEDGE
+    LTEXT           "OLD",IDC_STATIC,130,12,17,12,0,WS_EX_CLIENTEDGE
+    LTEXT           "NEW",IDC_STATIC,147,12,17,12,0,WS_EX_CLIENTEDGE
+    GROUPBOX        "Mémoire du CPC",IDC_STATIC,0,0,88,236
+    GROUPBOX        "Résultats",IDC_STATIC,92,0,88,236
+    LTEXT           "C0 : normal #0000 à #FFFF",IDC_STATIC,192,12,90,8
+    LTEXT           "- 64Ko supplémentaires -",IDC_STATIC,192,20,80,8
+    LTEXT           "C4 : bank1 #4000 à #7FFF",IDC_STATIC,192,28,88,8
+    LTEXT           "C5 : bank2 #4000 à #7FFF",IDC_STATIC,192,36,88,8
+    LTEXT           "C6 : bank3 #4000 à #7FFF",IDC_STATIC,192,44,88,8
+    LTEXT           "C7 : bank4 #4000 à #7FFF",IDC_STATIC,192,52,88,8
+    GROUPBOX        "Légende",IDC_STATIC,184,0,100,64
+    GROUPBOX        "Pokes",IDC_STATIC,184,68,100,168
+    PUSHBUTTON      "Ajouter Pokes",IDC_BP_POKE,204,92,56,14
+END
+
+IDD_DIAL_ZIP DIALOGEX 0, 0, 170, 191
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choix du ficher dans le ZIP"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_ZIP_FILE,0,0,170,162,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "OK",IDOK,19,169,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,169,50,14
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CONF_SCR DLGINIT
+BEGIN
+    IDC_CRTC_TYPE, 0x403, 18, 0
+0x6f50, 0x7275, 0x7020, 0x756c, 0x2073, 0x6174, 0x6472, 0x2e2e, 0x002e, 
+
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_EDIT_CONFIG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 328
+    END
+
+    IDD_CONF_KBD, DIALOG
+    BEGIN
+        RIGHTMARGIN, 308
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_ACTION_REPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 277
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 230
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
